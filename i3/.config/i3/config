@@ -57,6 +57,10 @@ bindsym $mod+p exec --no-startup-id ~/.config/i3/scripts/color-picker.sh
 #Power Menu 
 bindsym $mod+Escape exec --no-startup-id rofi -modi "powermenu:$HOME/.config/i3/scripts/power-menu" -show powermenu
 
+# I3 Lock
+bindsym Mod1+l exec --no-startup-id i3lock -c 000000
+
+
 #Removed Title Bar
 default_border pixel 2
 for_window [window_type="dialog"] border pixel 2

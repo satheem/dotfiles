@@ -126,4 +126,7 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
 
 # Only show fastfetch after everything else is loaded
-fastfetch --pipe false
+# Only run Fastfetch outside VS Code terminal
+if [[ "$TERM_PROGRAM" != "vscode" ]]; then
+    fastfetch --pipe false
+fi

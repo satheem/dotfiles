@@ -2,7 +2,16 @@
 
 This repository contains the complete configuration for my **Arch Linux + i3 setup**, managed using [GNU Stow](https://www.gnu.org/software/stow/) for easy deployment and portability.
 
----
+## Setup Preview
+
+Here’s a glimpse of my **Arch Linux + i3** configuration with custom themes, polybar, and workflows:
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/fad2e5ab-0c64-4c90-baf2-632f3ca31053" width="600" alt="i3 Setup Screenshot 1"/>
+  <img src="https://github.com/user-attachments/assets/6ec5ed3f-9fe0-4f57-84c9-d29f28749a57" width="600" alt="i3 Setup Screenshot 2"/>
+  <img src="https://github.com/user-attachments/assets/ce18b578-e629-43af-98d0-b6a1201869e2" width="600" alt="i3 Setup Screenshot 3"/>
+</p>
+
 
 ## Included Configs
 

@@ -1,27 +1,13 @@
-#!/usr/bin/env bash
+BACKLIGHT_PATH="/sys/class/backlight"
+DEVICE=$(ls $BACKLIGHT_PATH | head -n1)
 
-STEP=5   # brightness step in percentage
+if [ -z "$DEVICE" ]; then
+echo "NoBacklight"
+exit 0
+fi
 
-# Get current brightness and max
-CURRENT=$(brightnessctl g)
-MAX=$(brightnessctl m)
+MAX=$(cat $BACKLIGHT_PATH/$DEVICE/max_brightness)
+CURRENT=$(cat $BACKLIGHT_PATH/$DEVICE/brightness)
 
-NEW=$CURRENT  # Initialize NEW with current value
-
-case "$1" in
-    up)
-        NEW=$(( CURRENT + (MAX * STEP / 100) ))
-        [ $NEW -gt $MAX ] && NEW=$MAX
-        brightnessctl s $NEW
-        ;;
-    down)
-        NEW=$(( CURRENT - (MAX * STEP / 100) ))
-        MIN=$(( MAX * 10 / 100 ))   # minimum 10%
-        [ $NEW -lt $MIN ] && NEW=$MIN
-        brightnessctl s $NEW
-        ;;
-esac
-
-# Echo the new brightness percentage
-PERCENT=$(( NEW * 100 / MAX ))
-echo "$PERCENT%"
+PERCENT=$(( CURRENT * 100 / MAX ))
+echo "${PERCENT}%"

@@ -27,6 +27,8 @@ gaps outer 4
 
 
 set $mod Mod4
+exec --no-startup-id ~/.config/i3/profile
+exec --no-startup-id pkill -f "plasma|kded|krunner|plasma-integration|kglobalaccel"
 exec_always --no-startup-id killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1

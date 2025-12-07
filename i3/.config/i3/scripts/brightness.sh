@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+NOTIFY_ID=5555
 STEP=10   # brightness step in percentage
 
 # Get current brightness and max
@@ -20,5 +21,5 @@ case "$1" in
         ;;
 esac
 
-# Optional: show notification
-notify-send "Brightness: $(( NEW * 100 / MAX ))%"
+notify-send -r $NOTIFY_ID -u low "Brightness" "$(( NEW * 100 / MAX ))%"
+

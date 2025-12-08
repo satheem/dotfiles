@@ -42,7 +42,7 @@ exec --no-startup-id flameshotS
 bindsym $mod+c exec --no-startup-id code
 
 # Open Chrome
-bindsym $mod+b exec --no-startup-id google-chrome-stable
+bindsym $mod+b exec --no-startup-id brave
 
 # Open FileMenager
 bindsym $mod+e exec --no-startup-id dolphin

@@ -2,61 +2,61 @@
 
 # ---- MENU OUTPUT (for rofi) ----
 if [ $# -eq 0 ]; then
-    echo "󰗽 Logout"
-    echo " Lock"
-    echo "󰒲 Suspend"
-    echo " Reboot"
-    echo " Shutdown"
-    exit
+  echo "󰗽 Logout"
+  echo " Lock"
+  echo "󰒲 Suspend"
+  echo " Reboot"
+  echo " Shutdown"
+  exit
 fi
 
 # ---- SAFE APP CLOSE FUNCTION ----
 close_safe() {
-    APP="$1"
+  APP="$1"
 
-    if pgrep -x "$APP" >/dev/null; then
-        # graceful quit signal
-        pkill -2 "$APP"
-        sleep 1
-        # if still running → force close last chance
-        pkill -9 "$APP"
-    fi
+  if pgrep -x "$APP" >/dev/null; then
+    # graceful quit signal
+    pkill -2 "$APP"
+    sleep 1
+    # if still running → force close last chance
+    pkill -9 "$APP"
+  fi
 }
 
 # Close apps you want before logout
 safe_close_all() {
-    close_safe "code"        # VS Code
-    close_safe "firefox"     # Browser (optional)
-    close_safe "chromium"    # Optional
+  close_safe "code"     # VS Code
+  close_safe "firefox"  # Browser (optional)
+  close_safe "chromium" # Optional
 }
 
 # ---- HANDLE ACTIONS ----
 case "$1" in
-    "󰗽 Logout")
-        safe_close_all
-        sleep 1
-        i3-msg exit
-        ;;
+"󰗽 Logout")
+  safe_close_all
+  sleep 1
+  i3-msg exit
+  ;;
 
-    " Lock")
-        i3lock -c 000000
-        ;;
+" Lock")
+  i3-msg exec ~/.config/i3/scripts/i3_lock.sh
+  ;;
 
-    "󰒲 Suspend")
-        safe_close_all
-        sleep 1
-        systemctl suspend
-        ;;
+"󰒲 Suspend")
+  safe_close_all
+  sleep 1
+  systemctl suspend
+  ;;
 
-    " Reboot")
-        safe_close_all
-        sleep 1
-        systemctl reboot
-        ;;
+" Reboot")
+  safe_close_all
+  sleep 1
+  systemctl reboot
+  ;;
 
-    " Shutdown")
-        safe_close_all
-        sleep 1
-        systemctl poweroff
-        ;;
+" Shutdown")
+  safe_close_all
+  sleep 1
+  systemctl poweroff
+  ;;
 esac

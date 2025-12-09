@@ -130,3 +130,6 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 if [[ "$TERM_PROGRAM" != "vscode" ]]; then
     fastfetch --pipe false
 fi
+
+export PATH="/usr/bin/luajit:$PATH"
+

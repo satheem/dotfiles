@@ -1,8 +1,8 @@
-export ZPLUG_HOME=$HOME/.zplug
-source $ZPLUG_HOME/init.zsh
+# export ZPLUG_HOME=$HOME/.zplug
+# source $ZPLUG_HOME/init.zsh
 # Plugin manager installs
-zplug "romkatv/powerlevel10k"                     # Powerlevel10k itself
-zplug "tolkonepiu/catppuccin-powerlevel10k-themes" # Catppuccin themes
+# zplug "romkatv/powerlevel10k"                     # Powerlevel10k itself
+# zplug "tolkonepiu/catppuccin-powerlevel10k-themes" # Catppuccin themes
 
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.

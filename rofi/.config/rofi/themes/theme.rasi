@@ -5,7 +5,7 @@
 
 * {
   selected-active-foreground:  @background;
-  lightfg:                     @mauve;
+  lightfg:                     @text;
   separatorcolor:              @foreground;
   urgent-foreground:           @red;
   alternate-urgent-background: @lightbg;
@@ -25,12 +25,15 @@
   active-background:           @background;
   selected-normal-background:  @lightfg;
   alternate-normal-background: @lightbg;
-  foreground:                  @mauve;
+  foreground:                  @text;
   selected-urgent-foreground:  @background;
   normal-foreground:           @foreground;
   alternate-urgent-foreground: @red;
   alternate-active-foreground: @blue;
+}
 
+configuration {
+    font: "JetBrains Mono 12";
 }
 element {
     padding: 1px ;

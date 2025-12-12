@@ -133,3 +133,4 @@ fi
 
 export PATH="/usr/bin/luajit:$PATH"
 
+alias pavucontrol='GTK_THEME=Adwaita:dark pavucontrol'

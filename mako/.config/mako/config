@@ -1,0 +1,15 @@
+# ~/.config/mako/config
+font=monospace 10
+border-size=2
+border-radius=0
+border-color=#CDD6F4
+width=300
+height=50
+margin=10
+default-timeout=5000
+anchor=top-right
+background-color=#181824
+text-color=#FFFFFF
+icons=1
+icon-path=/usr/share/icons/Papirus:/usr/share/icons/hicolor
+max-icon-size=32
